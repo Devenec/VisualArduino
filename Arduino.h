@@ -4,6 +4,12 @@
 
 #include "hardware\arduino\cores\arduino\binary.h"
 
+// Special boards. Uncomment to use their functionalities.
+
+//#define ARDUINO_LEONARDO
+//#define ARDUINO_MEGA
+
+
 // Types
 
 typedef bool		   boolean;
@@ -13,30 +19,36 @@ typedef unsigned short word;
 
 // Constants
 
-#define LOW			 0x0
-#define HIGH		 0x1
+#define LOW				 0x0
+#define HIGH			 0x1
 
-#define INPUT		 0x0
-#define OUTPUT		 0x1
-#define INPUT_PULLUP 0x2
+#define INPUT			 0x0
+#define OUTPUT			 0x1
+#define INPUT_PULLUP	 0x2
 
-#define LED_BUILTIN	 13
+#define LED_BUILTIN		 13
 
-#define DEFAULT		 0
-#define EXTERNAL	 1
-#define INTERNAL	 2
+#define EXTERNAL		 0
+#define DEFAULT			 1
 
-#define LSBFIRST	 0
-#define MSBFIRST	 1
+#if defined(ARDUINO_MEGA)
+	#define INTERNAL1V1	 2
+	#define INTERNAL2V56 3
+#else
+	#define INTERNAL	 3
+#endif
 
-#define CHANGE		 1
-#define FALLING		 2
-#define RISING		 3
+#define LSBFIRST		 0
+#define MSBFIRST		 1
 
-#define BIN			 2
-#define OCT			 8
-#define DEC			 10
-#define HEX			 16
+#define CHANGE			 1
+#define FALLING			 2
+#define RISING			 3
+
+#define BIN				 2
+#define OCT				 8
+#define DEC				 10
+#define HEX				 16
 
 
 // Functions
@@ -151,3 +163,12 @@ public:
 };
 
 extern SerialInterface Serial;
+
+#if defined(ARDUINO_MEGA) || defined(ARDUINO_LEONARDO)
+extern SerialInterface Serial1;
+#endif
+
+#if defined(ARDUINO_MEGA)
+extern SerialInterface Serial2;
+extern SerialInterface Serial3;
+#endif

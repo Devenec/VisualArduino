@@ -1,7 +1,7 @@
 ## VisualArduino
 
 Simple Visual Studio project for Arduino development  
-Version 0.0.1
+Version 0.0.2
 
 
 ### About
@@ -38,4 +38,8 @@ The Visual Studio project has been tested with Visual Studio 2013.
 
 ### Usage
 
-*Arduino Project* template can be found at Visual C++ project templates in the *New Project* window of Visual Studio.
+*Arduino Project* template can be found in Visual C++ project templates in the *New Project* dialog of the Visual
+Studio.
+
+Arduino Leonardo and Mega boards have additional features. If you use these boards, you can 'enable' the features by
+uncommenting the board definitions at the top of *Arduino.h* header file.
