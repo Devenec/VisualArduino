@@ -1,16 +1,17 @@
 ## VisualArduino
 
 Simple Visual Studio project for Arduino development  
-Version 0.0.2
+Version 0.0.3
 
 
 ### About
 
-VisualArduino does not support compiling Arduino programs in Visual Studio. It only provides an easy way to write
-Arduino programs in Visual Studio, utilising the syntax and error highlighting. With VisualArduino the Arduino programs
-are compiled using Arduino IDE.
+VisualArduino provides a way to write Arduino programs in Visual Studio, utilising the syntax and error highlighting.
+It DOES NOT support compiling Arduino programs in Visual Studio. Hence Arduino IDE is still required for compiling
+Arduino programs.
 
-Contents
+
+#### Contents
 
 + Visual Studio project for developing Arduino programs
   + Includes single .ino source file
@@ -33,7 +34,7 @@ The Visual Studio project has been tested with Visual Studio 2013.
 
 4. Close all instances of Visual Studio
 
-5. Enable *Use external editor* in the preferences of Arduino IDE
+5. Enable *Use external editor* in Arduino IDE preferences
 
 
 ### Usage
@@ -41,5 +42,5 @@ The Visual Studio project has been tested with Visual Studio 2013.
 *Arduino Project* template can be found in Visual C++ project templates in the *New Project* dialog of the Visual
 Studio.
 
-Arduino Leonardo and Mega boards have additional features. If you use these boards, you can 'enable' the features by
-uncommenting the board definitions at the top of *Arduino.h* header file.
+Arduino Leonardo, Mega and Micro boards have additional features. If you use these boards, you can 'enable' the features
+by uncommenting the board definitions at the top of *Arduino.h* header file.

@@ -8,6 +8,7 @@
 
 //#define ARDUINO_LEONARDO
 //#define ARDUINO_MEGA
+//#define ARDUINO_MICRO
 
 
 // Types
@@ -26,7 +27,12 @@ typedef unsigned short word;
 #define OUTPUT			 0x1
 #define INPUT_PULLUP	 0x2
 
-#define LED_BUILTIN		 13
+#define LSBFIRST		 0
+#define MSBFIRST		 1
+
+#define CHANGE			 1
+#define FALLING			 2
+#define RISING			 3
 
 #define EXTERNAL		 0
 #define DEFAULT			 1
@@ -38,17 +44,55 @@ typedef unsigned short word;
 	#define INTERNAL	 3
 #endif
 
-#define LSBFIRST		 0
-#define MSBFIRST		 1
-
-#define CHANGE			 1
-#define FALLING			 2
-#define RISING			 3
-
 #define BIN				 2
 #define OCT				 8
 #define DEC				 10
 #define HEX				 16
+
+// Pins
+
+#if defined(ARDUINO_LEONARDO) || defined(ARDUINO_MICRO)
+	#define A0			 18
+	#define A1			 19
+	#define A2			 20
+	#define A3			 21
+	#define A4			 22
+	#define A5			 23
+	#define A6			 24
+	#define A7			 25
+	#define A8			 26
+	#define A9			 27
+	#define A10			 28
+	#define A11			 29
+#elif defined(ARDUINO_MEGA)
+	#define A0			 54
+	#define A1			 55
+	#define A2			 56
+	#define A3			 57
+	#define A4			 58
+	#define A5			 59
+	#define A6			 60
+	#define A7			 61	
+	#define A8			 62
+	#define A9			 63
+	#define A10			 64
+	#define A11			 65
+	#define A12			 66
+	#define A13			 67
+	#define A14			 68
+	#define A15			 69
+#else
+	#define A0			 14
+	#define A1			 15
+	#define A2			 16
+	#define A3			 17
+	#define A4			 18
+	#define A5			 19
+	#define A6			 20
+	#define A7			 21
+#endif
+
+#define LED_BUILTIN		 13
 
 
 // Functions
