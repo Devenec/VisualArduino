@@ -1,46 +1,93 @@
 ## VisualArduino
 
 Simple Visual Studio project for Arduino development  
-Version 0.0.3
+Version 0.1.0
 
 
 ### About
 
 VisualArduino provides a way to write Arduino programs in Visual Studio, utilising the syntax and error highlighting.
-It DOES NOT support compiling Arduino programs in Visual Studio. Hence Arduino IDE is still required for compiling
-Arduino programs.
+It **DOES NOT** support compiling Arduino programs in Visual Studio, however, and the Arduino IDE is required for
+compiling Arduino programs.
+
+VisualArduino supports <a href="http://arduino.cc/en/Main/Software" target="_blank">Arduino 1.0.5</a>.
 
 
 #### Contents
 
-+ Visual Studio project for developing Arduino programs
-  + Includes single .ino source file
-+ *Arduino.h* header file with declarations of most Arduino constants, functions and the Serial class
-  + Is automatically included into the .ino source file
-  + Conforms to Arduino 1.0.1
++ Visual Studio project for writing Arduino programs
+  + Single .ino source file
 
-The Visual Studio project has been tested with Visual Studio 2013.
+The Visual Studio project has been created and tested with Visual Studio 2013.
+
+
+### Supported Microcontrollers and Boards
+
++ ATmega8
+  + Arduino NG or older
++ ATmega168
+  + Arduino Diecimila or Duemilanove
+  + Arduino NG or older
+  + Arduino Pro or Pro Mini
+  + LilyPad Arduino
++ ATmega168 (8 analog inputs)
+  + Arduino BT
+  + Arduino Mini
+  + Arduino Nano
++ ATmega328P
+  + Arduino Duemilanove
+  + Arduino Ethernet
+  + Arduino Pro
+  + Arduino Uno
+  + LilyPad Arduino
++ ATmega328P (8 analog inputs)
+  + Arduino BT
+  + Arduino Fio
+  + Arduino Mini
+  + Arduino Nano
++ ATmega32u4
+  + Arduino Esplora
+  + Arduino Leonardo
+  + Arduino Micro
+  + Arduino Robot
+  + LilyPad Arduino USB
++ ATmega1280
+  + Arduino Mega
++ ATmega2560
+  + Arduino Mega 2560
+  + Arduino Mega ADK
 
 
 ### Setup
 
-1. Set up an environment variable *ARDUINO_ROOT* to point to the root of the Arduino installation directory, with **a
-   trailing backslash**
+1. Create an environment variable *ARDUINO_ROOT* pointing to the root of the Arduino installation directory, with
+   **a trailing backslash**
 
-2. Copy *Arduino.h* into the root of the Arduino installation directory
-
-3. Copy *Arduino Project.zip* into Visual C++ project template directory. By default, the directory path is
+2. Copy *Arduino Project.zip* into the Visual C++ project template directory. By default, the directory path is
    *%USERPROFILE%\\Documents\\Visual Studio \*\\Templates\\Project Templates\\Visual C++ Project\\*
 
-4. Close all instances of Visual Studio
+3. Enable *Use external editor* in the Arduino IDE preferences
 
-5. Enable *Use external editor* in Arduino IDE preferences
+4. Close all Visual Studio instances
 
 
 ### Usage
 
-*Arduino Project* template can be found in Visual C++ project templates in the *New Project* dialog of the Visual
+The *Arduino Project* template can be found in Visual C++ project templates in the *New Project* dialog of Visual
 Studio.
 
-Arduino Leonardo, Mega and Micro boards have additional features. If you use these boards, you can 'enable' the features
-by uncommenting the board definitions at the top of *Arduino.h* header file.
+Select a microcontroller configuration for your program from *Solution Configurations* dropdown list. *8A* denotes to 8
+analog inputs. Refer to *Supported Microcontrollers and Boards* list to select the correct configuration.
+
+
+### TODO
+
++ Adding support for libraries
++ Adding support for Arduino 1.5.7 BETA
+  + Arduino Yún and Due boards
+
+
+### License
+
+Copyright 2014 Eetu 'Devenec' Oinasmaa  
+Licensed under GNU General Public License
