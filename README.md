@@ -1,7 +1,7 @@
 ## VisualArduino
 
 Simple Visual Studio project for Arduino development  
-Version 0.1.0
+Version 0.1.1
 
 
 ### About
@@ -82,8 +82,8 @@ analog inputs. Refer to *Supported Microcontrollers and Boards* list to select t
 
 ### TODO
 
-+ Adding support for libraries
-+ Adding support for Arduino 1.5.7 BETA
++ Add support for user made libraries
++ Add support for Arduino 1.5.7 BETA
   + Arduino Yún and Due boards
 
 
