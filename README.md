@@ -1,7 +1,7 @@
 ## VisualArduino
 
 Simple Visual Studio project for Arduino development  
-Version 0.1.1
+Version 0.1.2
 
 
 ### About
@@ -15,8 +15,9 @@ VisualArduino supports <a href="http://arduino.cc/en/Main/Software" target="_bla
 
 #### Contents
 
-+ Visual Studio project for writing Arduino programs
-  + Single .ino source file
++ Arduino Project.zip, a Visual Studio project template for writing Arduino programs
+  + With single .ino source file
++ Arduino.props, a property sheet for common properties of the microcontroller configurations
 
 The Visual Studio project has been created and tested with Visual Studio 2013.
 
@@ -63,21 +64,27 @@ The Visual Studio project has been created and tested with Visual Studio 2013.
 1. Create an environment variable *ARDUINO_ROOT* pointing to the root of the Arduino installation directory, with
    **a trailing backslash**
 
-2. Copy *Arduino Project.zip* into the Visual C++ project template directory. By default, the directory path is
-   *%USERPROFILE%\\Documents\\Visual Studio \*\\Templates\\Project Templates\\Visual C++ Project\\*
+2. Copy *Arduino.props* into the root of the Arduino installation directory
 
-3. Enable *Use external editor* in the Arduino IDE preferences
+3. Copy *Arduino Project.zip* into the Visual C++ project template directory. By default, the directory path is
+   *%USERPROFILE%\\Documents\\Visual Studio X\\Templates\\Project Templates\\Visual C++ Project\\*
 
-4. Close all Visual Studio instances
+4. Enable *Use external editor* in the Arduino IDE preferences
+
+5. Close all Visual Studio instances
 
 
 ### Usage
 
+The Arduino version used can be defined in the *Arduino.props* file with the preprocessor definition *ARDUINO*. By
+default, it is defined as *ARDUINO=105* (1.0.5).
+
 The *Arduino Project* template can be found in Visual C++ project templates in the *New Project* dialog of Visual
 Studio.
 
-Select a microcontroller configuration for your program from *Solution Configurations* dropdown list. *8A* denotes to 8
-analog inputs. Refer to *Supported Microcontrollers and Boards* list to select the correct configuration.
+Select a microcontroller configuration for your program from *Solution Configurations* dropdown list. *8A* after a
+microcontroller name denotes to 8 analog inputs. Refer to *Supported Microcontrollers and Boards* list to select the
+correct configuration.
 
 
 ### TODO

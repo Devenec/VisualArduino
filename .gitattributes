@@ -1,6 +1,6 @@
-*	  text=auto
+*		 text=auto
 
-*.h	  text
-*.md  text
-*.txt text
-*.zip -text
+*.md	 text
+*.props  text eol=crlf
+*.txt	 text
+*.zip	-text
